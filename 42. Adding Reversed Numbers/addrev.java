@@ -1,39 +1,34 @@
 import java.util.*;
-class addrev
+import java.io.*;
+public class REvAdd
 {
-public static void main(String args[])
+    public static int reverse(int n)
+    {
+        int k=0;
+        while(n!=0)
+        {k=k*10+n%10;
+            n=(n/10);
+        }
+        return k;
+    }
+   public static void main(String arg[])throws IOException
+   {
+       Scanner a=new Scanner(System.in);
+int i; 
+int s;
+int m;
+s=a.nextInt();
+int h[]=new int[s];
+for(i=0;i<s;i++)
 {
-int cases,c;
-Scanner sc=new Scanner(System.in);
-cases=sc.nextInt();
-try
-{
-while(cases>0)
-{
-int a=sc.nextInt();
-int b=sc.nextInt();
-int ra=rev(a,0);
-int rb=rev(b,0);
-int rc=ra+rb;
-c=rev(rc,0);
-System.out.println(c);
-cases--;
+    int aa=a.nextInt();
+    int bb=a.nextInt();
+    int aaa=reverse(aa);
+    int bbb=reverse(bb);
+    int j=reverse(aaa+bbb);
+    h[i]=j;
 }
+for(i=0;i<s;i++)
+{System.out.println(""+h[i]);}
 }
-catch(Exception e)
-{
-return;
-}
-}
-public static int rev(int m,int temp)
-{
-while(m!=0)
-{
-temp=temp*10 + m%10;
-m=m/10;
-}
-return temp;
-}
-
-
 }
